@@ -1,34 +1,24 @@
-# Terraform state files and backups
-*.tfstate
-*.tfstate.backup
-
-# Crash log files
-crash.log
-
-# Sensitive variable files (optional: only if you store secrets locally)
-*.tfvars
-*.tfvars.json
-
-# Terraform local directories (plugins, providers, plans)
-.terraform/
+# Ignore all .terraform directories
 **/.terraform/
 
-# Lock file (exclude only if not using consistent provider versioning)
-.terraform.lock.hcl
+# Ignore Terraform state files
+**/*.tfstate
+**/*.tfstate.*
 
-# Ignore any override configuration files
-override.tf
-override.tf.json
-*_override.tf
-*_override.tf.json
+# Ignore secrets and variables
+**/*.tfvars
+**/*.tfvars.json
 
-# Plan output (if generated)
-*.tfplan
+# Ignore Terraform override and backup files
+**/override.tf
+**/override.tf.json
+**/*_override.tf
+**/*_override.tf.json
+**/.terraform.lock.hcl
 
-# Ignore local environment and debugging settings
-.terraformrc
-terraform.rc
-
-# OS/system files
+# Editor and OS files
+*.log
+*.bak
+.vscode/
+.idea/
 .DS_Store
-Thumbs.db
